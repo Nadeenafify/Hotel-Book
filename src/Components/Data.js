@@ -987,7 +987,7 @@ export const Hotels=
        Hardage:[{
         "id": 1,
         "name": "Ocean View Resort",
-        "image":"https://th.bing.com/th/id/OIF.09fVipo07tVKqWHWWDRp7g?rs=1&pid=ImgDetMain",
+        "image":"https://th.bing.com/th/id/OIP.g8Y_ik7UkGOMWxGv76Gb-gHaED?w=800&h=438&rs=1&pid=ImgDetMain",
         "location": {
           "city": "Hardage",
           "country": "Egypt",

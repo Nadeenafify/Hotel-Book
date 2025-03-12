@@ -5,12 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './i18n';
 import { MyProvider } from './contextApi/ContextApi';
-
+import { Toaster } from 'react-hot-toast';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <MyProvider> 
     <App />
+    <Toaster position="top-right" reverseOrder={false} />
     </MyProvider> 
 );
 

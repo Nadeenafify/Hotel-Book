@@ -5,7 +5,8 @@ import StarRatings from 'react-star-ratings'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-
+import { useMyContext } from '../contextApi/ContextApi';
+import toast, { Toaster } from 'react-hot-toast';
 const OfferHotels = () => {
 
 const navigate=useNavigate()
@@ -18,6 +19,30 @@ let filteredHotels=[...Hotels["Cairo"],...Hotels["Alex"],...Hotels["Elgona"]]
 //for translation
 const { t, i18n } = useTranslation();
 const currentLanguage = i18n.language || 'en';
+
+const {FavouriteHotel,setFavouriteHotel,isLogged}=useMyContext()
+  const [isfav,setisfav]=useState(false)
+ 
+  function addtofavourite(hotel){
+    if(isLogged){
+      
+     
+        setFavouriteHotel([...FavouriteHotel,hotel])
+      console.log(FavouriteHotel)
+      
+       
+        toast("Added To Favourite Successfully", {
+          duration: 2000,
+          position: "bottom-right"
+  
+        });
+        
+    }
+    else{
+     navigate("/login")
+    }
+ }
+ 
 
   return (
     <>
@@ -38,7 +63,7 @@ const currentLanguage = i18n.language || 'en';
         <div className={!islist?"flex flex-col mt-3 h-[60vh] ":"flex flex-col md:flex-row mt-3  md:h-[26vh] lg:h-[30vh] "} key={ele.id}>
           <div className={islist?"relative  xl:w-1/2 md:w-[60vw] md:h-full": "w-full relative  "}>
            <img loading="lazy"  onClick={()=>{navigate("/hotel",{state:{hotel:{...ele,price_per_night:(ele.price_per_night*(85/100)).toFixed(0)}}})}} src={ele.image} className={!islist?"cursor-pointer w-full h-[30vh] rounded":"cursor-pointer w-full h-full rounded"} alt="hotel-image"/>
-            <MdOutlineFavoriteBorder className='absolute top-4 right-3 text-black bg-white rounded-2xl p-1 text-3xl'/>
+            <MdOutlineFavoriteBorder  onClick={()=>{ addtofavourite(ele)} } className='absolute cursor-pointer top-4 hover:bg-gray-300 right-3 text-black bg-white rounded-2xl p-1 text-3xl'/>
            </div>
            <div className='px-5 shadow shadow-gray-200 h-full relative'>
              <h4 className='text-xl dark:text-white font-bold mt-3'>{ele.name}</h4>

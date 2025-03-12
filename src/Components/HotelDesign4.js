@@ -5,7 +5,7 @@ import StarRatings from 'react-star-ratings'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useMyContext } from '../contextApi/ContextApi';
-
+import toast, { Toaster } from 'react-hot-toast';
 const HotelDesign4 = (props) => {
 
     const { t, i18n } = useTranslation()
@@ -13,45 +13,31 @@ const HotelDesign4 = (props) => {
      const {FavouriteHotel,setFavouriteHotel,isLogged}=useMyContext()
      const [isfav,setisfav]=useState(false)
      function addtofavourite(hotel){
-        if(isLogged){
-          
-          setisfav(!isfav);
-     //i write if(!isfav) add it to favhotels because--->isfav value not updated yet.
-     // This issue is happening because React state updates are asynchronous.
-     //  When you call setisfav(!isfav) to update the state, the isfav value
-     //  doesn’t update immediately in the same function. Instead, React 
-     // schedules the state update and processes it later. During the 
-     // execution of your function, the isfav value is still the old 
-     // one because React hasn’t yet re-rendered the component with the new state.
-         if(!isfav){
-            const foundedHotel=FavouriteHotel.find((ele)=>{
-              return hotel.id===ele.id
-             })
-            if(!foundedHotel)
-            setFavouriteHotel([...FavouriteHotel,hotel])
-          }
+      if(isLogged){
+        
+       
+          setFavouriteHotel([...FavouriteHotel,hotel])
+        console.log(FavouriteHotel)
+        
+         
+          toast("Added To Favourite Successfully", {
+            duration: 2000,
+            position: "bottom-right"
     
-    
-          else if(isfav){
-            let filter=FavouriteHotel.filter((ele)=>{
-               return hotel.id!=ele.id
-            })
-            setFavouriteHotel(filter)
-          }
-           
+          });
           
-        }
-        else{
-         navigate("/login")
-        }
-     }
+      }
+      else{
+       navigate("/login")
+      }
+   }
       
   return (
     <>
 <div className={!props.islist?"flex flex-col mt-3 h-[60vh] ":"flex flex-col md:flex-row mt-3 px-3  md:h-[26vh] lg:h-[30vh] "} key={props.ele.id}>
 <div className={props.islist?"relative  w-full xl:w-1/2  md:h-full": "w-full relative  "}>
  <img loading="lazy" onClick={()=>{navigate("/hotel",{state:{hotel:{...props.ele}}})}} src={props.ele.image} className={!props.islist?"cursor-pointer w-full h-[25vh] rounded":"cursor-pointer w-full h-full rounded"} alt="hotel-image"/>
-   <MdOutlineFavoriteBorder onClick={()=>{addtofavourite(props.ele)} }className={`cursor-pointer absolute top-3 right-3 ${isfav?"bg-green-500":"bg-white"}  rounded-2xl p-1 text-3xl`}/>
+   <MdOutlineFavoriteBorder onClick={()=>{addtofavourite(props.ele)} }className={`hover:bg-gray-300  cursor-pointer absolute top-3 right-3 ${isfav?"bg-green-500":"bg-white"}  rounded-2xl p-1 text-3xl`}/>
  </div>
  <div className='px-5 shadow shadow-gray-200 h-full relative'>
    <h4 className='text-xl font-bold mt-3 dark:text-white'>{props.ele.name}</h4>

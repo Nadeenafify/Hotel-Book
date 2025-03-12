@@ -85,7 +85,8 @@ if(rest){
 // --------------------------------------------------------------------
 useEffect(()=>{
   settoPrice(maxprice?maxprice:maxPrice)
-},[maxPrice,maxprice])
+  window.scrollTo(0,0)
+},[maxPrice,maxprice,city])
 // ------------------------------------------------------------------
 return (
   <>
