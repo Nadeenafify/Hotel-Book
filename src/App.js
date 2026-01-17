@@ -1,15 +1,16 @@
 import './App.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Layout from './Components/Layout';
-import Home from './Pages/Home';
-import SingleHotel from './Pages/SingleHotel';
-import BookHotel from './Pages/BookHotel';
-import HotelsPage from './Pages/HotelsPage';
-import Contact from './Pages/Contact';
-import OfferHotels from './Pages/OfferHotels';
-import Login from"./Pages/Login"
-import SignUp from './Pages/SignUp';
-import Favourite from './Pages/Favourite';
+import Home from './Pages/home/components/Home';
+import HotelsPage from './Pages/hotels/components/HotelsPage';
+import Contact from './Pages/contact/Contact';
+import OfferHotels from './Pages/offers/OfferHotels';
+import Login from"./Pages/Auth/LoginPage"
+import SignUp from './Pages/Auth/SignUpPage';
+import Favourite from './Pages/favouriteHotels/FavouriteHotels';
+import HotelDetails from './Pages/hotelDetails/HotelDetails';
+import Book from './Pages/bookHotel/BookHotel';
+
 
 
 
@@ -21,13 +22,13 @@ function App() {
        <Routes>
         <Route path='/' element={<Layout/>}>
            <Route index element={<Home/>}/>
-           <Route path='hotel' element={<SingleHotel/>}/>
+           <Route path='hotelDetails' element={<HotelDetails/>}/>
            <Route path='hotels' element={<HotelsPage/>}/>
-           <Route path='bookhotel' element={<BookHotel/>}/>
+           <Route path='bookhotel' element={<Book/>}/>
            <Route path='contact' element={<Contact/>}/>
            <Route path='offers' element={<OfferHotels/>}/>
            <Route path='login' element={<Login/>}/>
-           <Route path='sign up' element={<SignUp/>}/> 
+           <Route path='signUp' element={<SignUp/>}/> 
            <Route path='favourite' element={<Favourite/>}/>
         </Route>
 
