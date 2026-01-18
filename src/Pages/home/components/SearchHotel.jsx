@@ -33,7 +33,7 @@ const SearchHotel = ({
   return (
     <>
       <div className="relative h-[85vh] w-[100vw]">
-        <video
+        {/* <video
           autoPlay
           muted
           loop
@@ -43,9 +43,9 @@ const SearchHotel = ({
           className="h-full w-full object-cover"
         >
           <source src="/videos/HomeMain3.mp4" type="video/mp4" />
-        </video>
+        </video> */}
         {!videoReady&&
-         <img src="/videos/VedioPoster.png" alt="poster-pic" className="h-[85vh] w-[100vw] top-0 left-0 absolute z-100"/>
+         <img src="/videos/VedioPoster.png" alt="poster-pic" className="h-[85vh] w-[100vw] top-0 left-0 absolute object-cover z-100"/>
         }
       </div>
 
