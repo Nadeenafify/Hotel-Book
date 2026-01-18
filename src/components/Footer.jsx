@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 const Footer = () => {
   const navigate = useNavigate()
 
-  const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language || 'en';
+  const { t} = useTranslation();
+  // const currentLanguage = i18n.language || 'en';
 
   return (
     <>
