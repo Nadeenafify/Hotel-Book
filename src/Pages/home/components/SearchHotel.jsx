@@ -12,6 +12,8 @@ const SearchHotel = ({
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language || "en";
+  
+  
 
   const destinations = [
     { value: "Cairo", label: "locations.cairo" },
@@ -34,11 +36,11 @@ const SearchHotel = ({
           autoPlay
           muted
           loop
-          poster="./videos/VedioPoster.png"
-          preload="auto"
+          poster="/videos/VedioPoster.png"
+          preload="metadata"
           className="h-full w-full object-cover"
         >
-          <source src="./videos/HomeMain3.mp4" type="video/mp4" />
+          <source src="/videos/HomeMain3.mp4" type="video/mp4" />
         </video>
       </div>
 
