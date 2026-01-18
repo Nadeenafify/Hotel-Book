@@ -14,7 +14,7 @@ const Contact = () => {
         <title>{t("contact.title")}</title>
       </Helmet>
 
-      <div className={`container mx-auto md:px-20 py-10 ${currentLanguage === "ar" ? "rtl" : "ltr"}`}>
+      <div className={`container px-3 md:px-20 py-10 ${currentLanguage === "ar" ? "rtl" : "ltr"}`}>
 
         <h1 className="text-xl sm:text-3xl font-bold  dark:text-white">
           {t("contact.header")}

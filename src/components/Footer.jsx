@@ -11,15 +11,13 @@ const Footer = () => {
   return (
     <>
       <footer
-        className={`container py-5 mt-2 w-[92vw] mb-10 ${
-          currentLanguage === "ar" ? "rtl mr-10" : "ltr ml-10"
-        }`}
+        className={`container py-5 mt-2 mx-5 mb-10`}
       >
-        <h4 className='ml-3 md:ml-5 font-bold text-2xl dark:text-white'>
+        <h4 className=' font-bold text-2xl dark:text-white'>
           {t("hotel.cities")}
         </h4>
 
-        <div className="grid grid-cols-2 ml-5 mt-10 md:grid-cols-4">
+        <div className="grid grid-cols-2  mt-10 md:grid-cols-4">
     
           <div className='flex flex-col gap-4 cursor-pointer mt-5'>
             <h4 className='dark:text-white' onClick={() => navigate("/hotels", { state: { city: "Cairo" } })}>

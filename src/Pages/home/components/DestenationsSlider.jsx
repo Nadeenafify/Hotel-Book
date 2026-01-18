@@ -40,12 +40,12 @@ const DestenationsSlider = ({ settings }) => {
     {
       city: "Luxor",
       label: "locations.luxor",
-      image: "https://th.bing.com/th/id/OIP.vulF9Wn4xJ_2kfukO5tZLwHaE8?rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/OIP.1viobxnkCLfzwSMq2f1qpgHaEK?w=1900&h=1069&rs=1&pid=ImgDetMain",
     },
     {
       city: "Aswan",
       label: "locations.aswan",
-      image: "https://th.bing.com/th/id/R.c0e2ca7f3c626704dd5299b30de3eec3?rik=oG5rPnZVTXzRIw&pid=ImgRaw&r=0",
+      image: "https://th.bing.com/th/id/OIP.U8ewTVH2sEnRmnBKl2BmOwHaE7?w=800&h=533&rs=1&pid=ImgDetMain",
     },
   ];
 

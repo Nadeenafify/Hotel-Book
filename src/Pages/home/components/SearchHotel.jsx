@@ -45,21 +45,21 @@ const SearchHotel = ({
       </div>
 
       <div
-        className={`absolute top-[25%] w-full md:mx-20 flex flex-col gap-2 ${
+        className={`absolute top-[30%] w-full md:mx-20 flex flex-col gap-2 ${
           currentLanguage === "ar"
             ? "rtl sm:pr-5 sm:right-6 pr-4"
             : "ltr sm:pl-5 sm:left-6 pl-4"
         }`}
       >
         <p
-          className={`text-md xl:text-xl text-white font-semibold ${
+          className={`text-md xl:text-xl text-white font-semibold  ${
             currentLanguage === "ar" ? "hidden" : "block"
           }`}
         >
           {t("search.packages")}
         </p>
 
-        <h1 className="text-3xl lg:text-5xl font-extrabold text-white mt-2">
+        <h1 className="text-3xl lg:text-5xl font-extrabold text-white ">
           {t("search.title")}
         </h1>
 
