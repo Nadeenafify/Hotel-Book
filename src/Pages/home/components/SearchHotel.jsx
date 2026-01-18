@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +13,7 @@ const SearchHotel = ({
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language || "en";
-  
+  const [videoReady, setVideoReady] = useState(false);
   
 
   const destinations = [
@@ -38,10 +39,14 @@ const SearchHotel = ({
           loop
           poster="/videos/VedioPoster.png"
           preload="metadata"
+          onCanPlayThrough={() => setVideoReady(true)}
           className="h-full w-full object-cover"
         >
           <source src="/videos/HomeMain3.mp4" type="video/mp4" />
         </video>
+        {!videoReady&&
+         <img src="/videos/VedioPoster.png" alt="poster-pic" className="h-[85vh] w-[100vw] top-0 left-0 absolute z-100"/>
+        }
       </div>
 
       <div
