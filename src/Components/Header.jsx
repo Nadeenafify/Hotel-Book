@@ -20,10 +20,11 @@ const Header = () => {
   const { isLogged, Email, setisLogged, setEmail } = useAuthContext();
 
   useEffect(() => {
+    
     document.documentElement.classList.toggle("dark", isDark);
     document.body.classList.toggle("dark", isDark);
     i18n.changeLanguage(language);
-  }, [isDark, language]);
+  }, [isDark, language,i18n]);
 
 
   return (
