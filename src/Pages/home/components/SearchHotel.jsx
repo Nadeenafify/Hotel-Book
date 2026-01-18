@@ -45,7 +45,7 @@ const SearchHotel = ({
       </div>
 
       <div
-        className={`absolute top-[30%] w-full md:mx-20 flex flex-col gap-4 ${
+        className={`absolute top-[25%] w-full md:mx-20 flex flex-col gap-2 ${
           currentLanguage === "ar"
             ? "rtl sm:pr-5 sm:right-6 pr-4"
             : "ltr sm:pl-5 sm:left-6 pl-4"

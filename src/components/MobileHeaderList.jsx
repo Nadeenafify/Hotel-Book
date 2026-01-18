@@ -23,7 +23,7 @@ const MobileHeaderList = ({
 }) => {
   return (
     <nav
-      className={`left-list md:hidden fixed top-0 left-0 h-screen w-2/3 bg-white dark:bg-gray-800 shadow-xl z-50 p-6 flex flex-col gap-5 ${currentLanguage === "ar" ? "rtl" : "ltr"
+      className={`left-list hidden fixed top-0 left-0 h-screen w-2/3 bg-white dark:bg-gray-800 shadow-xl z-50 p-6 flex flex-col gap-5 ${currentLanguage === "ar" ? "rtl" : "ltr"
         }`}
     >
       <IoIosCloseCircleOutline
