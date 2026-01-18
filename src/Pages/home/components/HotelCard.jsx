@@ -12,7 +12,7 @@ const HotelCard = ({ hotel }) => {
   const currentLanguage = i18n.language || "en";
 
   const { isLogged } = useAuthContext();
-  const { addToFavourite, isFavourite } = useFavouriteContext();
+  const { ToggleFavourite, isFavourite } = useFavouriteContext();
 
   const amenitiesMap = {
     "Free WiFi": "freeWifi",
@@ -52,8 +52,8 @@ const HotelCard = ({ hotel }) => {
             e.preventDefault();
 
             if (isLogged) {
-              addToFavourite(hotel);
-              toast.success(t("toast.favAdded"));
+              ToggleFavourite(hotel);
+              toast.success(t("offerHotels.addedToFavourites"));
             } else {
               toast.error(t("auth.signinRequired"));
             }

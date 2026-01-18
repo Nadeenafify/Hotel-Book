@@ -12,16 +12,22 @@ export const FavouriteProvider = ({ children }) => {
     localStorage.setItem("favouriteItems",JSON.stringify(favouriteItems))
   },[favouriteItems])
 
-  const addToFavourite = (hotel) => {
-    if (!isFavourite(hotel)) {
-      setFavouriteItems([...favouriteItems, hotel]);
-    }
-  };
-
 
   const removeFromFavourite = (hotel) => {
     setFavouriteItems(favouriteItems.filter((item) => item.id !== hotel.id));
   };
+
+  const ToggleFavourite = (hotel) => {
+    if (!isFavourite(hotel)) {
+      setFavouriteItems([...favouriteItems, hotel]);
+    }
+    else{
+      removeFromFavourite(hotel)
+    }
+  };
+
+
+  
 
  
   const isFavourite = (hotel) => {
@@ -33,7 +39,7 @@ export const FavouriteProvider = ({ children }) => {
       value={{
         favouriteItems,
         setFavouriteItems,
-        addToFavourite,
+        ToggleFavourite,
         removeFromFavourite,
         isFavourite,
       }}

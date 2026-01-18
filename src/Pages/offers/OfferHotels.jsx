@@ -18,12 +18,12 @@ const OfferHotels = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language || 'en';
 
-  const { FavouriteHotel, setFavouriteHotel, isLogged } = useAuthContext();
+  const { FavouriteHotel, ToggleFavourite, isLogged } = useAuthContext();
 
   // Add to favourite function
-  function addToFavourite(hotel) {
+  function Toggle(hotel) {
     if (isLogged) {
-      setFavouriteHotel([...FavouriteHotel, hotel]);
+      ToggleFavourite([...FavouriteHotel, hotel]);
       toast(t("offerHotels.addedToFavourites"), { duration: 2000, position: "bottom-right" });
     } else {
       toast(t("offerHotels.signinRequired"), { duration: 2000, position: "bottom-right" });
@@ -58,7 +58,7 @@ const OfferHotels = () => {
      
         <div className={!isList ? "grid grid-cols-3 gap-3" : "flex flex-col gap-4"}>
           {filteredHotels.map((ele) => (
-            <HotelCardOffer key={ele.id} ele={ele} addToFavourite={addToFavourite} />
+            <HotelCardOffer key={ele.id} ele={ele} addToFavourite={Toggle} />
           ))}
         </div>
       </div>

@@ -15,16 +15,17 @@ const Header = () => {
   const [isDark, setIsDark] = useState(false);
   const [language, setLanguage] = useState("en");
   const [langOpen, setLangOpen] = useState(false);
+  const [openHeaderList, setOpenHeaderList] = useState(false)
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language || "en";
   const { isLogged, Email, setisLogged, setEmail } = useAuthContext();
 
   useEffect(() => {
-    
+
     document.documentElement.classList.toggle("dark", isDark);
     document.body.classList.toggle("dark", isDark);
     i18n.changeLanguage(language);
-  }, [isDark, language,i18n]);
+  }, [isDark, language, i18n]);
 
 
   return (
@@ -67,9 +68,9 @@ const Header = () => {
             className="cursor-pointer text-xl dark:text-white hover:text-cyan-500 transition"
           />
 
-         
+
           <div className="relative">
-           
+
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-2 px-3 py-1.5 rounded-full border 
@@ -82,7 +83,7 @@ const Header = () => {
               </span>
             </button>
 
-           
+
             {langOpen && (
               <div
                 className="absolute right-0 mt-2 w-28 bg-white dark:bg-gray-800 
@@ -109,7 +110,7 @@ const Header = () => {
 
 
 
-          
+
           <Link to={!isLogged ? "/login" : ""}>
             <span className="px-3 py-1 border rounded-full text-sm dark:text-white hover:bg-cyan-500 hover:text-white transition">
               {isLogged ? Email?.slice(0, 1).toUpperCase() : t("nav.signin")}
@@ -135,28 +136,31 @@ const Header = () => {
         <FaList
           className="md:hidden text-2xl cursor-pointer dark:text-white"
           onClick={() =>
-            (document.querySelector(".left-list").style.display = "flex")
+            setOpenHeaderList(true)
           }
         />
 
       </div>
 
+      {
+        openHeaderList &&
 
-      <MobileHeaderList
-        email={Email}
-        currentLanguage={currentLanguage}
-        t={t}
-        isDark={isDark}
-        setIsDark={setIsDark}
-        language={language}
-        setLanguage={setLanguage}
-        isLogged={isLogged}
-        setIsLogged={setisLogged}
-        setEmail={setEmail}
-        onClose={() =>
-          (document.querySelector(".left-list").style.display = "none")
-        }
-      />
+        <MobileHeaderList
+          email={Email}
+          currentLanguage={currentLanguage}
+          t={t}
+          isDark={isDark}
+          setIsDark={setIsDark}
+          language={language}
+          setLanguage={setLanguage}
+          isLogged={isLogged}
+          setIsLogged={setisLogged}
+          setEmail={setEmail}
+          onClose={() =>
+            (document.querySelector(".left-list").style.display = "none")
+          }
+        />
+      }
 
 
 

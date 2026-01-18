@@ -11,7 +11,7 @@ const HotelCardOffer = ({ ele }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { isLogged } = useAuthContext();
-  const { addToFavourite, isFavourite } = useFavouriteContext();
+  const { ToggleFavourite, isFavourite } = useFavouriteContext();
 
   const offerPrice = (ele.price_per_night * 0.85).toFixed(0);
 
@@ -33,7 +33,7 @@ const HotelCardOffer = ({ ele }) => {
             e.preventDefault();
 
             if (isLogged) {
-              addToFavourite(ele);
+              ToggleFavourite(ele);
               toast.success(t("hotelCardOffer.addedToFavourites"));
             } else {
               toast.error(t("hotelCardOffer.signinRequired"));

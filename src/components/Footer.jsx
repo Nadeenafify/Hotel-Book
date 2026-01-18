@@ -17,7 +17,7 @@ const Footer = () => {
           {t("hotel.cities")}
         </h4>
 
-        <div className="grid grid-cols-2  mt-4 md:grid-cols-4">
+        <div className="grid grid-cols-2   md:grid-cols-4">
     
           <div className='flex flex-col gap-4 cursor-pointer mt-5'>
             <h4 className='dark:text-white' onClick={() => navigate("/hotels", { state: { city: "Cairo" } })}>

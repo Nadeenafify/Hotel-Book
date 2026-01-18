@@ -11,7 +11,7 @@ const HotelCardHorizontal = ({ ele }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { isLogged } = useAuthContext();
-  const { addToFavourite, isFavourite } = useFavouriteContext();
+  const { ToggleFavourite, isFavourite } = useFavouriteContext();
 
   return (
     <div className="flex flex-col md:flex-row bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition hover:shadow-xl mt-3">
@@ -32,7 +32,7 @@ const HotelCardHorizontal = ({ ele }) => {
             e.preventDefault();
 
             if (isLogged) {
-              addToFavourite(ele);
+             ToggleFavourite(ele);
               toast.success(t("toast.addedToFavourites"));
             } else {
               toast.error(t("toast.loginRequired"));
