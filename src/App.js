@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Layout from './components/Layout';
-import Home from './Pages/home/components/Home';
-import HotelsPage from './Pages/hotels/components/HotelsPage';
-import Contact from './Pages/contact/Contact';
-import OfferHotels from './Pages/offers/OfferHotels';
-import Login from"./Pages/Auth/LoginPage"
-import SignUp from './Pages/Auth/SignUpPage';
-import Favourite from './Pages/favouriteHotels/FavouriteHotels';
-import HotelDetails from './Pages/hotelDetails/HotelDetails';
-import Book from './Pages/bookHotel/BookHotel';
+import Home from './pages/home/components/Home';
+import HotelsPage from './pages/hotels/components/HotelsPage';
+import Contact from './pages/contact/Contact';
+import OfferHotels from './pages/offers/OfferHotels';
+import Login from"./pages/Auth/LoginPage"
+import SignUp from './pages/Auth/SignUpPage';
+import Favourite from './pages/favouriteHotels/FavouriteHotels';
+import HotelDetails from './pages/hotelDetails/HotelDetails';
+import Book from './pages/bookHotel/BookHotel';
 
 
 
