@@ -71,7 +71,7 @@ Mobile-first responsive layout
 🔗 Live Demo
 
 👉 Live Website:
-https://hotel-book-u1u2.vercel.app/
+https://hotel-booking-react-website-yqpf.vercel.app/
 
 
 👤 Author
