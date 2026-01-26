@@ -56,7 +56,7 @@ const OfferHotels = () => {
         </div>
 
      
-        <div className={!isList ? "grid grid-cols-3 gap-3" : "flex flex-col gap-4"}>
+        <div className={!isList ? "grid grid-cols-1 sm:grid-cols-2 gap-3" : "flex flex-col gap-4"}>
           {filteredHotels.map((ele) => (
             <HotelCardOffer key={ele.id} ele={ele} addToFavourite={Toggle} />
           ))}
